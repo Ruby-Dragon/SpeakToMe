@@ -4,4 +4,8 @@ project(SpeakToMe)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(SpeakToMe
-        main.cpp)
+        main.cpp
+        AI.cpp
+        AI.h
+        Dialogue.cpp
+        Dialogue.h)
