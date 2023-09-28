@@ -1,8 +1,7 @@
 cmake_minimum_required(VERSION 3.27)
-project(speaktome C)
+project(SpeakToMe)
 
-set(CMAKE_C_STANDARD 17)
+set(CMAKE_CXX_STANDARD 14)
 
-add_executable(speaktome main.c
-        GameState.c
-        GameState.h)
+add_executable(SpeakToMe
+        main.cpp)
