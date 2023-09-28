@@ -9,3 +9,10 @@ add_executable(SpeakToMe
         AI.h
         Dialogue.cpp
         Dialogue.h)
+
+add_custom_command(TARGET SpeakToMe POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${PROJECT_SOURCE_DIR}/Dialogue
+        ${PROJECT_BINARY_DIR}/Dialogue
+        COMMENT "Copying Dialogue Files"
+)

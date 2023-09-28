@@ -6,7 +6,7 @@
 
 AI::AI()
 {
-    CurrentDialogue = Dialogue(0);
+    InitializeDialogue();
 }
 
 void AI::AdvanceDialogue()

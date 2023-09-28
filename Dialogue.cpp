@@ -1,5 +1,9 @@
 #include <iostream>
+#include <fstream>
 #include "Dialogue.h"
+
+#define DIALOGUE_INDICATOR "[DIALOGUE]"
+#define ANSWER_INDICATOR "[ANSWER]"
 
 Dialogue::Dialogue()
 {
@@ -17,7 +21,25 @@ std::vector<std::string> Dialogue::LoadDialogue()
 {
     std::vector<std::string> NewDialogue = std::vector<std::string>();
 
-    NewDialogue.emplace_back("Hello World!");
+    std::ifstream DialogueFile ("Dialogue/dialogue_" + std::to_string(ID) + ".dat", std::ios::in);
+
+    std::string Line;
+
+    while (getline(DialogueFile, Line))
+    {
+        //std::cout << "Reading" << std::endl;
+        if (Line == DIALOGUE_INDICATOR)
+        {
+            continue; //for now
+        }
+
+        if (Line == ANSWER_INDICATOR)
+        {
+            break; //for now
+        }
+
+        NewDialogue.push_back(Line);
+    }
 
     return NewDialogue;
 }

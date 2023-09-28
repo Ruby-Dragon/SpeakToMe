@@ -9,7 +9,6 @@ int main()
     std::string Input;
 
     AI TheAI = AI();
-    TheAI.InitializeDialogue();
 
     while (Playing)
     {
