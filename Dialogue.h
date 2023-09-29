@@ -7,12 +7,13 @@
 
 #include <string>
 #include <vector>
+#include "Answer.h"
 
 class Dialogue {
 
 private:
 
-    std::vector<std::string> LoadDialogue();
+    void LoadDialogue();
 
 public:
 
@@ -25,6 +26,8 @@ public:
     int ID;
 
     std::vector<std::string> Text;
+
+    std::vector<Answer> PossibleAnswers;
 };
 
 

@@ -8,7 +8,9 @@ add_executable(SpeakToMe
         AI.cpp
         AI.h
         Dialogue.cpp
-        Dialogue.h)
+        Dialogue.h
+        Answer.cpp
+        Answer.h)
 
 add_custom_command(TARGET SpeakToMe POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_directory
