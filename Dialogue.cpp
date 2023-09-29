@@ -4,6 +4,7 @@
 
 #define DIALOGUE_INDICATOR "[DIALOGUE]"
 #define ANSWER_INDICATOR "[ANSWER]"
+#define ASCII_A 97
 
 Dialogue::Dialogue()
 {
@@ -83,8 +84,13 @@ void Dialogue::Print()
 
     std::cout << "\n";
 
+    //start at a
+    int character = ASCII_A;
+
     for (int i = 0; i < PossibleAnswers.size(); i++)
     {
-        std::cout << PossibleAnswers[i].ToString() << std::endl;
+        std::cout << (char) character << ". " << PossibleAnswers[i].ToString() << std::endl;
+        //go through alphabet for each answer
+        character++;
     }
 }
