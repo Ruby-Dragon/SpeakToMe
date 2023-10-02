@@ -30,6 +30,11 @@ bool AI::EvaluateResponse(std::string Input)
     {
         //std::cout << CurrentDialogue.PossibleAnswers[InputValue - ASCII_A].Text << std::endl;
         Friendliness += CurrentDialogue.PossibleAnswers[InputValue - ASCII_A].Impact;
+        CurrentDialogue = Dialogue(CurrentDialogue.PossibleAnswers[InputValue - ASCII_A].ID);
+    }
+    else
+    {
+        return false;
     }
 
     //std::cout << Friendliness << std::endl;

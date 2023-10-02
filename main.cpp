@@ -28,6 +28,16 @@ int main()
         {
             std::cout << "YOU CANNOT ANSWER AS SUCH. PLEASE SELECT A VALID RESPONSE: ";
             std::cin >> Input;
+            if (Input == "e")
+            {
+                break;
+            }
+        }
+
+        //have to check again
+        if (Input == "e")
+        {
+            break;
         }
 
     }
