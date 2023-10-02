@@ -5,6 +5,7 @@
 #ifndef SPEAKTOME_ANSWER_H
 #define SPEAKTOME_ANSWER_H
 
+#define ASCII_A 97
 
 #include <string>
 

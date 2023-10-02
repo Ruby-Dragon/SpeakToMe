@@ -4,7 +4,6 @@
 
 #define DIALOGUE_INDICATOR "[DIALOGUE]"
 #define ANSWER_INDICATOR "[ANSWER]"
-#define ASCII_A 97
 
 Dialogue::Dialogue()
 {

@@ -4,6 +4,7 @@
 
 int main()
 {
+    //not used yet, but could be used for more interesting effects later...
     bool Playing = true;
 
     std::string Input;
@@ -15,12 +16,20 @@ int main()
 
         TheAI.AdvanceDialogue();
 
+        std::cout << "Select Response: ";
         std::cin >> Input;
 
         if (Input == "e")
         {
-            Playing = false;
+            break;
         }
+
+        while (!TheAI.EvaluateResponse(Input))
+        {
+            std::cout << "YOU CANNOT ANSWER AS SUCH. PLEASE SELECT A VALID RESPONSE: ";
+            std::cin >> Input;
+        }
+
     }
 
     return 0;
