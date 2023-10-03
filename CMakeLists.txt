@@ -3,6 +3,9 @@ project(SpeakToMe)
 
 set(CMAKE_CXX_STANDARD 14)
 
+find_package(Curses REQUIRED)
+include_directories(${CURSES_INCLUDE_DIR})
+
 add_executable(SpeakToMe
         main.cpp
         AI.cpp
@@ -11,6 +14,8 @@ add_executable(SpeakToMe
         Dialogue.h
         Answer.cpp
         Answer.h)
+
+target_link_libraries(SpeakToMe ${CURSES_LIBRARIES})
 
 add_custom_command(TARGET SpeakToMe POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_directory

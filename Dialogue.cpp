@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "Dialogue.h"
+#include <ncurses.h>
 
 #define DIALOGUE_INDICATOR "[DIALOGUE]"
 #define ANSWER_INDICATOR "[ANSWER]"
@@ -76,19 +77,29 @@ void Dialogue::LoadDialogue()
 
 void Dialogue::Print()
 {
+    int row, col;
+
+
+
     for (int i = 0; i < Text.size(); i++)
     {
-        std::cout << Text[i] << std::endl;
+        //std::cout << Text[i] << std::endl;
+        getyx(stdscr, row, col);
+        move(row+1, 0);
+        printw("%s", Text[i].c_str());
     }
 
-    std::cout << "\n";
+    //std::cout << "\n";
 
     //start at a
     int character = ASCII_A;
 
     for (int i = 0; i < PossibleAnswers.size(); i++)
     {
-        std::cout << (char) character << ". " << PossibleAnswers[i].ToString() << std::endl;
+        getyx(stdscr, row, col);
+        move(row+1, 0);
+        //std::cout << (char) character << ". " << PossibleAnswers[i].ToString() << std::endl;
+        printw("%c. %s", (char) character, PossibleAnswers[i].ToString().c_str());
         //go through alphabet for each answer
         character++;
     }
