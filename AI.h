@@ -19,7 +19,7 @@ public:
 
     Dialogue CurrentDialogue;
 
-    void AdvanceDialogue();
+    bool AdvanceDialogue();
 
     void InitializeDialogue();
 

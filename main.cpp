@@ -43,7 +43,11 @@ int main()
     {
         move(0,0);
 
-        TheAI.AdvanceDialogue();
+        if (!TheAI.AdvanceDialogue())
+        {
+            getch();
+            break;
+        }
 
         getyx(stdscr, row, col);
 
