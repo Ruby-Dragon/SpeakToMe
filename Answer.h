@@ -21,6 +21,8 @@ public:
     std::string Text;
     float Impact = 0.0f;
     int ID = 0;
+
+    float RequiredFriendliness = 0.0f;
 };
 
 

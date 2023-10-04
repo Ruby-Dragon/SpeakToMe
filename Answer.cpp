@@ -9,6 +9,7 @@ Answer::Answer()
     Text = "";
     ID = 0;
     Impact = 0.0f;
+    RequiredFriendliness = 0.0f;
 }
 
 Answer::Answer(std::string Text, int ID, float Impact)

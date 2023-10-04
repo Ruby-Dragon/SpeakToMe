@@ -54,7 +54,7 @@ void Dialogue::LoadDialogue()
         }
         else
         {
-            //std::cout << Line << " " << SinceAnswerTag << "\n";
+
             switch (SinceAnswerTag)
             {
                 case 1:
@@ -66,6 +66,8 @@ void Dialogue::LoadDialogue()
                 case 3:
                     PossibleAnswers[AnswerIndex].Impact = std::stof(Line);
                     break;
+                case 4:
+                    PossibleAnswers[AnswerIndex].RequiredFriendliness = std::stof(Line);
                 default:
                     break;
             }
@@ -78,8 +80,6 @@ void Dialogue::LoadDialogue()
 void Dialogue::Print()
 {
     int row, col;
-
-
 
     for (int i = 0; i < Text.size(); i++)
     {

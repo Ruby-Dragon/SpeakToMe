@@ -16,6 +16,7 @@ AI::AI()
 
 bool AI::AdvanceDialogue()
 {
+    FilterResponses();
     CurrentDialogue.Print();
 
     if (CurrentDialogue.ID == END_GAME_ID)
@@ -56,4 +57,18 @@ bool AI::EvaluateResponse(std::string Input)
     //std::cout << Friendliness << std::endl;
 
     return true;
+}
+
+void AI::FilterResponses()
+{
+    std::vector<Answer> NewList = std::vector<Answer>();
+    for (int i = 0; i < CurrentDialogue.PossibleAnswers.size(); i++)
+    {
+        if (CurrentDialogue.PossibleAnswers[i].RequiredFriendliness <= Friendliness)
+        {
+            NewList.push_back(CurrentDialogue.PossibleAnswers[i]);
+        }
+    }
+
+    CurrentDialogue.PossibleAnswers = NewList;
 }

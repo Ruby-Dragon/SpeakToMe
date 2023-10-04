@@ -23,6 +23,8 @@ public:
 
     void InitializeDialogue();
 
+    void FilterResponses();
+
     bool EvaluateResponse(std::string Input);
 
 };

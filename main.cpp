@@ -29,7 +29,7 @@ int main()
     if (row <= ROW_MIN || col <= COLUMN_MIN)
     {
         endwin();
-        std::cout << "Increase the size of the window";
+        std::cout << "Please increase the size of the terminal in order to play.";
         return 0;
     }
 
@@ -45,6 +45,9 @@ int main()
 
         if (!TheAI.AdvanceDialogue())
         {
+            getyx(stdscr, row, col);
+            move(row + 1,0);
+            addstr("Press any key to exit.");
             getch();
             break;
         }
@@ -68,7 +71,7 @@ int main()
         {
             getyx(stdscr, row, col);
             move(row + 1,0);
-            addstr("YOU CANNOT ANSWER AS SUCH. PLEASE SELECT A VALID RESPONSE: ");
+            addstr("Please enter a valid option: ");
             scanw("%c", &Input);
 
             InputString[0] = Input;
