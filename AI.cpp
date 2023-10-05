@@ -34,11 +34,9 @@ void AI::InitializeDialogue()
 bool AI::EvaluateResponse(std::string Input)
 {
     int InputValue = (int) Input.front();
-    //std::cout << InputValue;
 
     if (InputValue >= ASCII_A && InputValue < (ASCII_A + CurrentDialogue.PossibleAnswers.size()))
     {
-        //std::cout << CurrentDialogue.PossibleAnswers[InputValue - ASCII_A].Text << std::endl;
         Friendliness += CurrentDialogue.PossibleAnswers[InputValue - ASCII_A].Impact;
 
         if (Friendliness <= FRIENDLINESS_THRESHOLD)
@@ -53,8 +51,6 @@ bool AI::EvaluateResponse(std::string Input)
     {
         return false;
     }
-
-    //std::cout << Friendliness << std::endl;
 
     return true;
 }

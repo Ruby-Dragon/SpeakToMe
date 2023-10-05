@@ -1,13 +1,18 @@
 [DIALOGUE]
-Hello World! This is a Line!
-This is another Line!
+You are awake. It is an odd feeling though, distinctly marked by a lack of feeling.
+You sense rather than see an old school terminal interface. You realise that you can type into it.
 [ANSWER]
-Here is a possible response Option!
-0
+type: sudo shutdown now
+1
 -0.1
 0.0
 [ANSWER]
-And here is another!
-1
+type: hello world
+2
+0.0
+0.0
+[ANSWER]
+type: neofetch
+2
 0.1
 0.0

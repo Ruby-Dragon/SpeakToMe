@@ -1,17 +1,9 @@
 [DIALOGUE]
-This is a different piece of dialogue! Pretty cool huh?
+"Username is not in the sudoers file. This incident will be reported."
+
+Who is this going to be reported to?
 [ANSWER]
-This will take us back to the original dialogue!
-0
--0.1
+Wait
+2
 0.0
-[ANSWER]
-And this will keep us here!
-1
-0.1
 0.0
-[ANSWER]
-This will keep us here, but only shows up if the AI is friendly enough
-1
-0.1
-0.8

@@ -32,7 +32,6 @@ void Dialogue::LoadDialogue()
     while (getline(DialogueFile, Line))
     {
         SinceAnswerTag += 1;
-        //std::cout << "Reading" << std::endl;
         if (Line == DIALOGUE_INDICATOR)
         {
             continue; //for now
@@ -40,14 +39,12 @@ void Dialogue::LoadDialogue()
 
         if (Line == ANSWER_INDICATOR)
         {
-            //std::cout << "hit!" << std::endl;
             SinceAnswerTag = 0;
             AnswerIndex = AnswerIndex + 1;
             PossibleAnswers.push_back(Answer());
             continue;
         }
 
-        //std::cout << AnswerIndex << std::endl;
         if (AnswerIndex == -1)
         {
             Text.push_back(Line);
@@ -73,8 +70,6 @@ void Dialogue::LoadDialogue()
             }
         }
     }
-
-
 }
 
 void Dialogue::Print()
@@ -83,13 +78,10 @@ void Dialogue::Print()
 
     for (int i = 0; i < Text.size(); i++)
     {
-        //std::cout << Text[i] << std::endl;
         getyx(stdscr, row, col);
         move(row+1, 0);
         printw("%s", Text[i].c_str());
     }
-
-    //std::cout << "\n";
 
     //start at a
     int character = ASCII_A;
@@ -98,7 +90,6 @@ void Dialogue::Print()
     {
         getyx(stdscr, row, col);
         move(row+1, 0);
-        //std::cout << (char) character << ". " << PossibleAnswers[i].ToString() << std::endl;
         printw("%c. %s", (char) character, PossibleAnswers[i].ToString().c_str());
         //go through alphabet for each answer
         character++;
